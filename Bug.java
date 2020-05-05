@@ -14,9 +14,9 @@ public class Bug extends Actor
      */
     public void act()
     {
-        move(4);
+        move(5);
         if (Greenfoot.isKeyDown("left")) {
-            turn(-5);
+            turn(-4);
         }
         if (Greenfoot.isKeyDown("right")) {
             turn(5);

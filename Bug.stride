@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="Bug" extends="Actor" extends-java="Actor" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors/>
+    <methods>
+        <method access="public" type="void" type-java="void" name="act" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the Bug wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="move(4)" expression-java="move(4)" enable="true"/>
+                <if condition="Greenfoot.isKeyDown(&quot;left&quot;)" condition-java="Greenfoot.isKeyDown(&quot;left&quot;)" enable="true">
+                    <ifStatements>
+                        <call expression="turn(-5)" expression-java="turn(-5)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.isKeyDown(&quot;right&quot;)" condition-java="Greenfoot.isKeyDown(&quot;right&quot;)" enable="true">
+                    <ifStatements>
+                        <call expression="turn(5)" expression-java="turn(5)" enable="true"/>
+                    </ifStatements>
+                    <else/>
+                </if>
+                <call expression="eatCherry()" expression-java="eatCherry()" enable="true"/>
+                <blank/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="eatCherry" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the Bug wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <if condition="isTouching(Cherry.class)" condition-java="isTouching(Cherry.class)" enable="true">
+                    <ifStatements>
+                        <blank/>
+                        <call expression="removeTouching(Cherry.class)" expression-java="removeTouching(Cherry.class)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <blank/>
+            </body>
+        </method>
+    </methods>
+</class>
